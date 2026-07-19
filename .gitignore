@@ -1,0 +1,38 @@
+# Python virtual environment
+.venv/
+
+# Python bytecode / cache
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+
+# Dataset (large, and data/ is regenerable from archive(2) via 01_preprocessing.ipynb)
+archive(2)/
+data/
+
+# Model results: checkpoints (.pth), embeddings (.npy) are large binaries;
+# plots/reports are small but regenerable by re-running each notebook
+cnn_results/
+convnext_tiny_results/
+densenet121_results/
+efficientnet_b0_cbam_results/
+mobilenetv3_small_results/
+
+# Not tracked for now
+04_train_densenet121.ipynb
+05_train_efficientnet_b0_cbam.ipynb
+06_train_mobilenetv3_small.ipynb
+webapp/
+
+# Editor / IDE
+.vscode/
+
+# OS
+.DS_Store
+
+# Secrets / local env overrides
+.env
+.env.local
+
+# Local Claude Code settings (machine-specific)
+.claude/settings.local.json

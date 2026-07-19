@@ -1,0 +1,33 @@
+# Core
+numpy
+pandas
+scikit-learn
+joblib
+
+# Image handling / augmentation
+pillow
+opencv-python-headless
+albumentations
+
+# Deep learning (CNN)
+torch
+torchvision
+
+# Feature selection (mRMR)
+mrmr-selection
+
+# Plotting / EDA
+matplotlib
+seaborn
+
+# Notebook support
+jupyter
+ipykernel
+
+# Utilities
+tqdm
+
+# Web backend
+fastapi
+uvicorn[standard]
+python-multipart
