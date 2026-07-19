@@ -123,6 +123,4 @@ Then open the URL Vite prints (typically `http://localhost:5173`).
 ## Planned next step
 
 Use the saved `*_embs.npy` feature vectors for an mRMR + SVM hybrid
-classification stage on top of each CNN backbone (same pattern as the
-`FYP_Jena_Nathis` project's `06-Custom_CNN_6conv_mRMR_SVM` pipeline) — not yet
-built.
+
