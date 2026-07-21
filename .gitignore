@@ -1,5 +1,6 @@
 # Python virtual environment
 .venv/
+.venv-1/
 
 # Python bytecode / cache
 __pycache__/
@@ -19,10 +20,8 @@ efficientnet_b0_cbam_results/
 mobilenetv3_small_results/
 
 # Not tracked for now
-04_train_densenet121.ipynb
 05_train_efficientnet_b0_cbam.ipynb
 06_train_mobilenetv3_small.ipynb
-webapp/
 
 # Editor / IDE
 .vscode/
