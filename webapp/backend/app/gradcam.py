@@ -51,6 +51,7 @@ class GradCAM:
 
 TARGET_LAYER = {
     "custom_cnn":           lambda m: m.conv6,
+    "custom_cnn_tuned":     lambda m: m.conv6,
     "convnext_tiny":        lambda m: m.features,
     "densenet121":          lambda m: m.features,
     "efficientnet_b0_cbam": lambda m: m.cbam,

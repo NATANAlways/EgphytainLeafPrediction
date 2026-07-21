@@ -183,6 +183,11 @@ MODEL_REGISTRY = {
         "build_fn": build_custom_cnn,
         "checkpoint_path": ROOT / "cnn_results" / "best_custom_6cnn_model.pth",
     },
+    "custom_cnn_tuned": {
+        "label": "Custom 6-Conv CNN (Optuna-Tuned)",
+        "build_fn": build_custom_cnn,
+        "checkpoint_path": ROOT / "optuna_hy_tunining" / "results" / "best_tuned_custom6cnn.pth",
+    },
     "convnext_tiny": {
         "label": "ConvNeXt-Tiny",
         "build_fn": build_convnext_tiny,

@@ -120,6 +120,46 @@ npm run dev
 
 Then open the URL Vite prints (typically `http://localhost:5173`).
 
+### Testing the web application
+
+With the backend running (`http://localhost:8000`), verify it end-to-end from
+the command line before (or instead of) clicking through the UI:
+
+```bash
+# 1. Backend is up and which device it's running inference on
+curl http://localhost:8000/health
+
+# 2. Which models have a trained checkpoint available
+curl http://localhost:8000/models
+
+# 3. Predict on a sample image (swap the path for any leaf photo)
+curl -X POST http://localhost:8000/predict \
+  -F "model_key=custom_cnn" \
+  -F "file=@data/test/Apple/IMG_20240710_161157.jpg"
+
+# 4. Grad-CAM (+ CBAM attention, for efficientnet_b0_cbam only) for the same image
+curl -X POST http://localhost:8000/explain \
+  -F "model_key=custom_cnn" \
+  -F "file=@data/test/Apple/IMG_20240710_161157.jpg"
+```
+
+`model_key` is one of: `custom_cnn`, `custom_cnn_tuned`, `convnext_tiny`,
+`densenet121`, `efficientnet_b0_cbam`, `mobilenetv3_small` — matches the `key`
+field from step 2's `/models` response. `/predict` returns the predicted class,
+confidence, and per-class probabilities; `/explain` returns the same fields'
+worth of image data as base64 data-URIs (`gradcam`, and `cbam_attention` when
+not applicable to that model).
+
+For the frontend, exercise it manually in the browser (upload a photo, switch
+between models, toggle "AI Validation" to check Grad-CAM/CBAM render), and run
+its lint/build checks:
+
+```bash
+cd webapp/frontend
+npm run lint    # oxlint
+npm run build   # production build — catches type/import errors dev mode won't
+```
+
 ## Planned next step
 
 Use the saved `*_embs.npy` feature vectors for an mRMR + SVM hybrid
