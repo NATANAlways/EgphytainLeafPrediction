@@ -33,5 +33,5 @@ mobilenetv3_small_results/
 .env
 .env.local
 
-# Local Claude Code settings (machine-specific)
-.claude/settings.local.json
+# Claude Code settings (machine-specific, not shared with the team)
+.claude/
